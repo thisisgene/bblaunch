@@ -1,0 +1,57 @@
+<!DOCTYPE html(lang='de')>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Eugene Delta</title>
+  <meta name="description" content="Official home of Eugene Delta."/>
+  <meta name="viewport" content="width=device-width"/>
+  <!--// Google verification-->
+  <!--meta(name='google-site-verification', content='u6mzEFPkp8pWrEMysWNZG7uqexc6ihIYWyXLw-2SZtA')-->
+  <!--// favicons-->
+  <link rel="shortcut icon" href="assets/favicon.ico?" type="image/x-icon"/>
+  <link rel="icon" href="assets/favicon.ico?" type="image/x-icon"/>
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <!-- javascript-->
+  <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<section id="home">
+  <div class="home-wrapper">
+    <div class="cover-container"><img src="./assets/img/bb_cover_final_800.jpg"/></div>
+    <div class="counter-container">
+      <div id="counter"></div>
+    </div>
+    <div class="icon-container"><a href="https://instagram.com/eugene.delta" target="blank"><img src="./assets/img/icon-instagram.png"/></a><a href="https://facebook.com/eugenedelta" target="blank"><img src="./assets/img/icon-fb.png"/></a><a href="mailto:contact@eugenedelta.com"><img src="./assets/img/icon-mail.png"/></a></div>
+  </div>
+</section>
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Oct 12, 2018 12:00:00").getTime();
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+      // Get todays date and time
+      var now = new Date().getTime();
+      
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Output the result in an element with id="demo"
+      document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      
+      // If the count down is over, write some text 
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("counter").innerHTML = "EXPIRED";
+      }
+  }, 1000);
+</script>

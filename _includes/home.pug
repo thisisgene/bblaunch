@@ -1,0 +1,45 @@
+section#home
+
+  .home-wrapper
+    .cover-container
+      img(src='./assets/img/bb_cover_final_800.jpg')
+    //- h1 New single coming Oct. 12
+    .counter-container
+      #counter
+    .icon-container
+      a(href='https://instagram.com/eugene.delta', target='blank')
+        img(src='./assets/img/icon-instagram.png')
+      a(href='https://facebook.com/eugenedelta', target='blank')
+        img(src='./assets/img/icon-fb.png')
+      a(href='mailto:contact@eugenedelta.com')
+        img(src='./assets/img/icon-mail.png')
+
+script.
+  // Set the date we're counting down to
+  var countDownDate = new Date("Oct 12, 2018 12:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+      
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Output the result in an element with id="demo"
+      document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      
+      // If the count down is over, write some text 
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("counter").innerHTML = "EXPIRED";
+      }
+  }, 1000);
